@@ -45,3 +45,16 @@ export default function Catalog() {
     }, 8000);
     return () => clearInterval(interval);
   }, []);
+    function addToCart(item) {
+    setCart([...cart, item]);
+  }
+
+  return (
+    <div className="max-w-5xl mx-auto space-y-6">
+      <h1 className="text-3xl font-bold text-center">Mini Storefront</h1>
+
+      {/* Filters */}
+      <div className="flex justify-center gap-4">
+        <CategoryFilter category={category} setCategory={setCategory} />
+        <PriceFilter maxPrice={maxPrice} setMaxPrice={setMaxPrice} />
+      </div>
