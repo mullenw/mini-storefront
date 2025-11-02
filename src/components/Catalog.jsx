@@ -35,3 +35,13 @@ export default function Catalog() {
     data = data.filter((p) => p.price <= maxPrice);
     setFiltered(data);
   }, [category, maxPrice, products]);
+   useEffect(() => {
+    const interval = setInterval(() => {
+      setProducts((prev) =>
+        prev.map((p) =>
+          Math.random() > 0.7 && p.stock > 0 ? { ...p, stock: p.stock - 1 } : p
+        )
+      );
+    }, 8000);
+    return () => clearInterval(interval);
+  }, []);
