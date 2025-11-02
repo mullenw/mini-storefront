@@ -53,8 +53,19 @@ export default function Catalog() {
     <div className="max-w-5xl mx-auto space-y-6">
       <h1 className="text-3xl font-bold text-center">Mini Storefront</h1>
 
-      {/* Filters */}
+
       <div className="flex justify-center gap-4">
         <CategoryFilter category={category} setCategory={setCategory} />
         <PriceFilter maxPrice={maxPrice} setMaxPrice={setMaxPrice} />
       </div>
+
+      <CartSummary cart={cart} setCart={setCart} />
+
+
+      <StatusMessage status={status} products={filtered} />
+
+      
+      {status === 'ready' && <ProductList products={filtered} addToCart={addToCart} />}
+    </div>
+  );
+}
