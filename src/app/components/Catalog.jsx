@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import ProductList from './ProductList';
 import CategoryFilter from './CategoryFilter';
 import PriceFilter from './PriceFilter';
-import CartSummary from './CartSummary';
+import CartSummary from './CartSummary.jsx';
 import StatusMessage from './StatusMessage';
 
 export default function Catalog() {
